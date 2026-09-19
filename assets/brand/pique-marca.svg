@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="PIQUE">
+  <title>PIQUE — marca</title>
+  <!-- Una sola tinta. Cambia currentColor para recolorearla. -->
+  <path d="M47 15.5 A24 24 0 1 1 19.5 50.5" fill="none" stroke="currentColor" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M44 46 L57 52 L45 57 Z" fill="currentColor"/>
+</svg>
