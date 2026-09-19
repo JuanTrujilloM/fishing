@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PIQUE — Equipo de pesca en drops limitados</title>
+<meta name="description" content="Señuelos, varas y carreteles en lanzamientos limitados. Sin reposición. Se consulta y se cierra por WhatsApp.">
+<meta name="theme-color" content="#12171A">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PIQUE — Equipo de pesca en drops limitados">
+<meta property="og:description" content="Señuelos, varas y carreteles en drops limitados. Cuando se agota, se agota.">
+<meta property="og:image" content="assets/og.jpg">
+
+<!-- Favicon: el anillo sin pua. Abajo de 16px la pua se pierde. -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2312171A'/><path d='M47 15.5A24 24 0 1 1 19.5 50.5' fill='none' stroke='%237FE3F0' stroke-width='7.5' stroke-linecap='round'/><circle cx='32' cy='32' r='6.5' fill='%23E4EAED'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Karla:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#" aria-label="PIQUE, inicio">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M47 15.5 A24 24 0 1 1 19.5 50.5" fill="none" stroke="var(--accent)" stroke-width="7.5" stroke-linecap="round"/>
+        <path d="M44 46 L57 52 L45 57 Z" fill="var(--accent)"/>
+        <circle cx="32" cy="32" r="6.5" fill="var(--text)"/>
+      </svg>
+      <strong class="brand-text" data-brand-name>PIQUE</strong>
+    </a>
+    <div class="header-status" data-header-status hidden></div>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- El fondo (fotos de embalses) vive aparte del contenido: el contenido se
+       redibuja con cada refresco de la planilla y el slideshow no debe
+       reiniciarse cada vez. -->
+  <section class="hero-wrap" data-hero-wrap>
+    <div class="hero-bg" data-hero-bg aria-hidden="true"></div>
+    <div class="hero-place" data-hero-place></div>
+    <!-- El contenido cambia segun el estado: drop abierto, proximo o cerrado -->
+    <div class="hero" data-hero hidden></div>
+  </section>
+
+  <!-- Cinta que corre debajo del hero -->
+  <div class="ticker" data-ticker aria-hidden="true"></div>
+
+  <!-- Grilla de productos: solo cuando hay un drop abierto -->
+  <section class="catalog" data-catalog hidden>
+    <div class="wrap">
+      <div class="catalog-head">
+        <h2 class="section-title">En este drop</h2>
+        <div class="filters" data-filters role="group" aria-label="Filtrar por categoría"></div>
+      </div>
+      <div class="grid" data-grid></div>
+      <p class="empty-note" data-grid-empty hidden>No hay productos en esta categoría.</p>
+    </div>
+  </section>
+
+  <!-- Archivo de drops pasados -->
+  <section class="archive" data-archive hidden>
+    <div class="wrap">
+      <h2 class="section-title">Drops anteriores</h2>
+      <p class="section-sub">Lo que ya pasó. Nada de esto vuelve.</p>
+      <div data-archive-list></div>
+    </div>
+  </section>
+
+  <!-- Estados de carga / error -->
+  <section class="state-msg" data-loading>
+    <div class="wrap"><div class="spinner" aria-hidden="true"></div><p>Cargando catálogo…</p></div>
+  </section>
+  <section class="state-msg" data-error hidden>
+    <div class="wrap">
+      <p class="err-title">No pudimos cargar el catálogo</p>
+      <p class="err-detail" data-error-detail></p>
+      <button class="btn btn-ghost" data-retry>Reintentar</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p><span data-brand-name>PIQUE</span> · Colombia</p>
+    <p class="footer-links">
+      <a data-wa-footer href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <a data-ig-link href="#" target="_blank" rel="noopener" hidden>Instagram</a>
+    </p>
+    <p class="footer-fine">Cada drop es una edición limitada: cuando se agota, no se repone. Los precios pueden variar entre drops.</p>
+    <p class="footer-fine footer-credits" data-photo-credits></p>
+  </div>
+</footer>
+
+<!-- Detalle de producto -->
+<dialog class="modal" data-modal aria-label="Detalle del producto">
+  <button class="modal-close" data-modal-close aria-label="Cerrar">&times;</button>
+  <div class="modal-body" data-modal-body></div>
+</dialog>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
