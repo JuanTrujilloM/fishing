@@ -1,0 +1,16 @@
+# Archivos temporales que crea Excel al abrir la plantilla
+~$*
+
+# Sistema operativo
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Configuracion local de la vista previa del editor
+.claude/launch.json
+
+# Archivos para pasar datos a la planilla: se usan una vez y quedan viejos.
+# No van al repo porque GitHub Pages publica todo lo commiteado.
+PIQUE-planilla-completa.xlsx
+productos-para-pegar.tsv
+drops-para-pegar.tsv
